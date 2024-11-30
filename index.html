@@ -299,7 +299,7 @@
       };
 
       navButtons[3].onclick = () => {
-        let buttonText = copyBtnEl.innerText.trim();
+        let buttonText = navButtons[3].innerText.trim();
         if (outputHolder.value.trim() !== "") {
           navigator.clipboard.writeText(outputHolder.value);
           navButtons[3].textContent = "Copied";
