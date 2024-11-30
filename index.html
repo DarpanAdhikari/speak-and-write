@@ -173,10 +173,10 @@
         <textarea id="output-field" readonly></textarea>
       </div>
       <div class="nav-buttons">
-        <button class="start-btn" id="start">Start</button>
+        <button class="start-btn" id="start">🎙️</button>
         <button class="stop-btn">Stop</button>
         <button id="clear">Clear</button>
-        <button id="copy">Copy</button>
+        <button id="copy">📋</button>
         <select id="langSelect"> </select>
       </div>
     </div>
@@ -299,13 +299,14 @@
       };
 
       navButtons[3].onclick = () => {
+        let buttonText = copyBtnEl.innerText.trim();
         if (outputHolder.value.trim() !== "") {
           navigator.clipboard.writeText(outputHolder.value);
           navButtons[3].textContent = "Copied";
           navButtons[3].classList.add("click");
           setTimeout(() => {
             navButtons[3].classList.remove("click");
-            navButtons[3].textContent = "Copy";
+            navButtons[3].textContent = buttonText;
           }, 3000);
         }
       };
